@@ -1,12 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
 import luketopiaApp from './reducers';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 
-let store = createStore(luketopiaApp);
+let store = createStore(luketopiaApp, applyMiddleware(thunk));
 
 ReactDOM.render(
   <Provider>
