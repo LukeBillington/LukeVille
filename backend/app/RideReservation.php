@@ -10,7 +10,7 @@ class RideReservation extends Model
         'person_id', 'ride_time_id',
     ];
 
-    public function rideTime() {
+    public function ride_time() {
         return $this->belongsTo('App\RideTime');
     }
 

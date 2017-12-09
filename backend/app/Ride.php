@@ -10,7 +10,7 @@ class Ride extends Model
         'name', 'location', 'type', 'height_requirement', 'description', 'photo_path',
     ];
 
-    public function rideTimes() {
+    public function ride_times() {
         return $this->hasMany('App\RideTime');
     }
 }

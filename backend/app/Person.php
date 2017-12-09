@@ -14,7 +14,7 @@ class Person extends Model
         return $this->belongsTo('App\User');
     }
 
-    public function rideReservations() {
+    public function ride_reservations() {
         return $this->hasMany('App\RideReservation');
     }
 }
