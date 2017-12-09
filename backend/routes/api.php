@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
+use App\Http\Resources\UserResource;
 use App\Http\Resources\RideResource;
 
 /*
@@ -15,7 +16,7 @@ use App\Http\Resources\RideResource;
 */
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+    return new UserResource($request->user());
 });
 
 Route::get('/rides', function () {
