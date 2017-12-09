@@ -1,18 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import luketopiaApp from './reducers';
-import App from './App';
+import Root from './Root';
 import registerServiceWorker from './registerServiceWorker';
 
 let store = createStore(luketopiaApp, applyMiddleware(thunk));
 
 ReactDOM.render(
-  <Provider>
-    <App />
-  </Provider>,
+  <Root store={store} />,
   document.getElementById('root')
 );
 registerServiceWorker();
