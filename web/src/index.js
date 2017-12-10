@@ -5,6 +5,7 @@ import thunk from 'redux-thunk';
 import luketopiaApp from './reducers';
 import Root from './Root';
 import registerServiceWorker from './registerServiceWorker';
+import './index.css';
 
 let store = createStore(luketopiaApp, applyMiddleware(thunk));
 

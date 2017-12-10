@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types'
+import propTypes from 'prop-types'
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { createStore, applyMiddleware } from 'redux';
@@ -13,8 +13,8 @@ const Root = ({ store }) => (
   </Provider>
 )
 
-Root.PropTypes = {
-  store: PropTypes.object.isRequired
+Root.propTypes = {
+  store: propTypes.object.isRequired
 }
 
 export default Root;
