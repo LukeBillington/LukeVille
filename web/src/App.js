@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import Navbar from './components/Navbar';
 import Sidebar from './components/Sidebar';
+import DashboardUpcomingReservations from './components/DashboardUpcomingReservations';
+import DashboardExplore from './components/DashboardExplore';
 
 class App extends Component {
 
@@ -37,7 +39,15 @@ class App extends Component {
     return (
       <div className="App">
         <Navbar />
-        <Sidebar user={this.state.user} rides={this.state.rides} />
+        <div className="row">
+          <div className="col-2">
+            <Sidebar user={this.state.user} />
+          </div>
+          <div className="col-10">
+            <DashboardUpcomingReservations />
+            <DashboardExplore rides={this.state.rides} />
+          </div>
+        </div>
       </div>
     );
   }

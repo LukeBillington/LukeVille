@@ -5,9 +5,10 @@ class UserPeopleList extends Component {
 
   getPeople() {
     if(this.props.people) {
-      return Object.keys(this.props.people).map((key) => {
+      let people = this.props.people;
+      return Object.keys(people).map((key) => {
         return (
-          <UserPeopleListItem person={this.props.people[key]} />
+          <UserPeopleListItem person={people[key]} />
         );
       });
     }

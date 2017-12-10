@@ -19,12 +19,12 @@ class Sidebar extends Component {
 
   render() {
     return (
-      <section className="col-2 bg-secondary text-white sidebar">
+      <section className="col-2 bg-dark text-light sidebar">
         <div className="container">
           <img src={this.props.user.photo_path} className="img-fluid mx-auto d-block rounded-circle" />
           <h2 className="text-center">{this.props.user.name}</h2>
           <hr />
-          <UserPeopleList title="My group" people={this.props.user.people}/>
+          <UserPeopleList title="My group" people={this.props.user.people} />
           <hr />
           <button className="btn btn-danger btn-block">Logout</button>
         </div>

@@ -4,7 +4,7 @@ class Navbar extends Component {
 
   render() {
     return (
-      <nav className="navbar fixed-top navbar-expand navbar-dark bg-dark">
+      <nav className="navbar fixed-top navbar-expand navbar-dark bg-primary">
         <a className="navbar-brand" href="/">Luketopia</a>
         <ul className="navbar-nav">
           <li className="nav-item">
