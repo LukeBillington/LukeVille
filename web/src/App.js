@@ -1,18 +1,53 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import axios from 'axios';
+import Navbar from './components/Navbar';
+import Sidebar from './components/Sidebar';
+import DashboardUpcomingReservations from './components/DashboardUpcomingReservations';
+import DashboardExplore from './components/DashboardExplore';
 
 class App extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      api_base: 'http://localhost:8000/api',
+      user: {},
+      rides: []
+    }
+  }
+
+  componentDidMount() {
+    this.getUser();
+    this.getRides();
+  }
+
+  getUser() {
+    axios.get(this.state.api_base + '/user')
+    .then((data) => {
+      this.setState({user: data.data.data});
+    });
+  }
+
+  getRides() {
+    axios.get(this.state.api_base + '/rides')
+    .then((data) => {
+      this.setState({rides: data.data.data});
+    });
+  }
+
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <Navbar />
+        <div className="row">
+          <div className="col-2">
+            <Sidebar user={this.state.user} />
+          </div>
+          <div className="col-10">
+            <DashboardUpcomingReservations />
+            <DashboardExplore rides={this.state.rides} />
+          </div>
+        </div>
       </div>
     );
   }
