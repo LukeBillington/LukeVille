@@ -26,3 +26,7 @@ Route::get('/user', function () {
 Route::get('/rides', function () {
     return RideResource::collection(App\Ride::all());
 });
+
+Route::get('/ride/{id}', function ($id) {
+    return new RideResource(App\Ride::findOrFail($id));
+});
