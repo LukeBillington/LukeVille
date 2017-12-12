@@ -1,8 +1,12 @@
 import { combineReducers } from 'redux';
-import rideReservations from './rideReservations';
+import user from './user';
+import rides from './rides';
+import ride from './ride';
 
 const luketopiaApp = combineReducers({
-  rideReservations
+  user,
+  rides,
+  ride
 });
 
 export default luketopiaApp;

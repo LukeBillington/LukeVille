@@ -1,0 +1,34 @@
+/* Colors
+====================================================================== */
+/* Typography
+====================================================================== */
+/* Spacing & Borders
+====================================================================== */
+/* Header
+====================================================================== */
+/* Sidebar
+====================================================================== */
+.GlobalNavbar {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); }
+
+.GlobalNavbar {
+  padding-left: 2rem;
+  padding-right: 2rem; }
+
+.GlobalNavbar {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background-color: #003462;
+  display: flex;
+  color: #FFFFFF;
+  height: 6rem;
+  line-height: 6rem;
+  z-index: 100; }
+  .GlobalNavbar h1 {
+    font-family: "Roboto Condensed", "Helvetica Neue", Helvetica, sans-serif;
+    font-weight: 600; }
+  .GlobalNavbar ul {
+    display: flex; }
+    .GlobalNavbar ul li {
+      margin-left: 2rem; }

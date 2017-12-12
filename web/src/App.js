@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import axios from 'axios';
+import { connect } from 'react-redux';
+import { userFetchData } from './actions/user';
+import { ridesFetchData } from './actions/rides';
 import Navbar from './components/Navbar';
 import Sidebar from './components/Sidebar';
 import DashboardUpcomingReservations from './components/DashboardUpcomingReservations';
@@ -7,45 +9,32 @@ import DashboardExplore from './components/DashboardExplore';
 
 class App extends Component {
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      api_base: 'http://localhost:8000/api',
-      user: {},
-      rides: []
-    }
-  }
-
   componentDidMount() {
-    this.getUser();
-    this.getRides();
-  }
-
-  getUser() {
-    axios.get(this.state.api_base + '/user')
-    .then((data) => {
-      this.setState({user: data.data.data});
-    });
-  }
-
-  getRides() {
-    axios.get(this.state.api_base + '/rides')
-    .then((data) => {
-      this.setState({rides: data.data.data});
-    });
+    this.props.userFetchData('user');
+    this.props.ridesFetchData('rides');
   }
 
   render() {
+    if(this.props.ridesHasErrored) {
+      return (
+        <p>Sorry there was an error loading the data, please attempt again later.</p>
+      )
+    }
+    if(this.props.ridesIsLoading) {
+      return (
+        <p>Loading...</p>
+      )
+    }
     return (
       <div className="App">
         <Navbar />
         <div className="row">
           <div className="col-2">
-            <Sidebar user={this.state.user} />
+            <Sidebar user={this.props.user} />
           </div>
           <div className="col-10">
             <DashboardUpcomingReservations />
-            <DashboardExplore rides={this.state.rides} />
+            <DashboardExplore rides={this.props.rides} />
           </div>
         </div>
       </div>
@@ -53,4 +42,22 @@ class App extends Component {
   }
 }
 
-export default App;
+const mapStateToProps = (state) => {
+  return {
+    user: state.user,
+    userHasErrored: state.userHasErrored,
+    userIsLoading: state.userIsLoading,
+    rides: state.rides,
+    ridesHasErrored: state.ridesHasErrored,
+    ridesIsLoading: state.ridesIsLoading
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    userFetchData: (url) => dispatch(userFetchData(url)),
+    ridesFetchData: (url) => dispatch(ridesFetchData(url))
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);

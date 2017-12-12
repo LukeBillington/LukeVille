@@ -1,0 +1,56 @@
+/* Colors
+====================================================================== */
+/* Typography
+====================================================================== */
+/* Spacing & Borders
+====================================================================== */
+/* Header
+====================================================================== */
+/* Sidebar
+====================================================================== */
+.GlobalSidebar {
+  padding-left: 2rem;
+  padding-right: 2rem; }
+
+.GlobalSidebar {
+  background-color: #212121;
+  color: rgba(255, 255, 255, 0.7);
+  position: fixed;
+  top: 0;
+  padding-top: 8rem;
+  bottom: 0;
+  width: 24rem;
+  overflow: scroll;
+  border-right: 2px solid rgba(255, 255, 255, 0.7); }
+  .GlobalSidebar h2 {
+    text-align: center;
+    font-weight: 600; }
+  .GlobalSidebar h3 {
+    text-align: center;
+    margin-bottom: 1rem; }
+  .GlobalSidebar hr {
+    border-color: #353535;
+    margin-top: 2rem;
+    margin-bottom: 2rem; }
+
+.MyProfile {
+  text-align: center; }
+  .MyProfile img {
+    width: 10rem;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.7);
+    margin-bottom: 1rem; }
+
+.MyGroup div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; }
+  .MyGroup div article {
+    min-width: 50%;
+    text-align: center;
+    padding: 1rem; }
+    .MyGroup div article img {
+      width: 6rem;
+      border-radius: 50%;
+      border: 2px solid rgba(255, 255, 255, 0.7);
+      margin-bottom: 1rem; }

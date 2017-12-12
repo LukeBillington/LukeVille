@@ -1,0 +1,21 @@
+/* Colors
+====================================================================== */
+/* Typography
+====================================================================== */
+/* Spacing & Borders
+====================================================================== */
+/* Header
+====================================================================== */
+/* Sidebar
+====================================================================== */
+.RideReservePeople div {
+  display: flex;
+  justify-content: space-between; }
+
+.RideReservePeople article {
+  width: 10rem; }
+  .RideReservePeople article img {
+    width: 10rem;
+    border-radius: 50%; }
+  .RideReservePeople article p {
+    text-align: center !important; }

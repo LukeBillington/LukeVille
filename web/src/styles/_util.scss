@@ -1,0 +1,19 @@
+%container {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+%clear-1 {
+  margin-left: -#{$spacing-1};
+  margin-right: -#{$spacing-1};
+}
+
+%clear-2 {
+  margin-left: -#{$spacing-2};
+  margin-right: -#{$spacing-2};
+}
+
+%clear-3 {
+  margin-left: -#{$spacing-3};
+  margin-right: -#{$spacing-3};
+}

@@ -1,0 +1,42 @@
+/* Colors
+====================================================================== */
+/* Typography
+====================================================================== */
+/* Spacing & Borders
+====================================================================== */
+/* Header
+====================================================================== */
+/* Sidebar
+====================================================================== */
+.RideCard {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); }
+
+.RideCardList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 3rem; }
+
+.RideCard {
+  width: calc(100%/3 - 1.5rem);
+  background-color: #FFFFFF;
+  padding-bottom: 2rem;
+  margin-top: 3rem; }
+  .RideCard img {
+    width: 100%;
+    margin-bottom: 1rem; }
+  .RideCard .container {
+    display: flex;
+    flex-wrap: wrap; }
+  .RideCard .left {
+    width: 80%; }
+  .RideCard .right {
+    width: 20%;
+    text-align: center;
+    background-color: #ECEFF1;
+    padding: .5rem;
+    border-radius: .5rem;
+    font-size: 1.2rem; }
+    .RideCard .right strong {
+      font-size: 2rem;
+      display: block; }
