@@ -1,0 +1,13 @@
+.HomeExplore_Container {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  padding-top: 1.5rem;
+}
+
+.HomeExplore_List {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: wrap;
+}

@@ -1,0 +1,18 @@
+.AttractionListItem_Container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+  flex: 1;
+  max-width: 40rem;
+  background-color: white;
+  box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.1);
+}
+
+.AttractionListItem_Image {
+  width: 100%;
+}
+
+.AttractionListItem_RideInfo {
+  padding: 1rem;
+  padding-top: 1.5rem;
+}

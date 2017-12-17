@@ -1,0 +1,11 @@
+.AttractionReserveConfirmButton_Container {
+  display: flex;
+  padding: 1rem;
+  background-color: white;
+  margin-bottom: 1px;
+  justify-content: center;
+}
+
+.AttractionReserveConfirmButton_ButtonDisabled {
+  opacity: .5;
+}

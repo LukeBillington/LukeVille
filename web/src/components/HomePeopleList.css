@@ -1,0 +1,20 @@
+.HomePeopleList_Container {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid rgba(0,0,0,.5);
+}
+
+.HomePeopleList_Heading {
+  color: white;
+}
+
+.HomePeopleList_List {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  flex-direction: row;
+  flex: 1;
+}

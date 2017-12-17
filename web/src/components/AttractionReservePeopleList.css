@@ -1,0 +1,18 @@
+.AttractionReservePeopleList_Container {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  padding: 1rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  margin-bottom: 1px;
+  position: relative;
+}
+
+.AttractionReservePeopleList_List {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-content: center;
+  flex-wrap: wrap;
+}

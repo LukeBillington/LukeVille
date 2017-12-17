@@ -1,0 +1,8 @@
+.AttractionDescriptionInfo_Container {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  padding-top: 1.5rem;
+  background-color: white;
+  margin-bottom: 1px;
+}
