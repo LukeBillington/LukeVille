@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Http\Request;
+use App\Http\Resources\UserResource;
+use App\Http\Resources\RideResource;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +15,14 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+// Temorarily returning first user
+/*Route::middleware('auth:api')->get('/user', function (Request $request) {
+    return new UserResource($request->user());
+});*/
+Route::get('/user', function () {
+    return new UserResource(\App\User::first());
+});
+
+Route::get('/rides', function () {
+    return RideResource::collection(App\Ride::all());
 });

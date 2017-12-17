@@ -36,6 +36,7 @@ html {
 }
 
 body {
+<<<<<<< HEAD
 	line-height: 1;
 	font-size: 1.6rem;
 	background-color: #E9E9EF;
@@ -101,4 +102,35 @@ a, a:hover, a:active, a:visited { color: inherit; }
   src: url('assets/RobotoCondensed-Bold.eot?#iefix') format('embedded-opentype'),  url('assets/RobotoCondensed-Bold.woff') format('woff'), url('assets/RobotoCondensed-Bold.ttf')  format('truetype'), url('assets/RobotoCondensed-Bold.svg#RobotoCondensed-Bold') format('svg');
   font-weight: normal;
   font-style: normal;
+=======
+  padding-top: 3.5rem;
+}
+
+.sidebar {
+  position: fixed;
+  top: 51px;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  padding: 20px 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  border-right: 1px solid #eee;
+}
+
+.sidebar .nav {
+  margin-bottom: 20px;
+}
+
+.sidebar .nav-item {
+  width: 100%;
+}
+
+.sidebar .nav-item + .nav-item {
+  margin-left: 0;
+}
+
+.sidebar .nav-link {
+  border-radius: 0;
+>>>>>>> 052ee7eb146448dfb177922c6d6e24f24c49dea4
 }

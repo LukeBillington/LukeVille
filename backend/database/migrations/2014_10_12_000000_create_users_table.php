@@ -18,6 +18,11 @@ class CreateUsersTable extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->string('password');
+            $table->enum('gender', [
+              'Male',
+              'Female',
+            ]);
+            $table->string('photo_path')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
+use App\Person;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -50,6 +51,7 @@ class RegisterController extends Controller
         return Validator::make($data, [
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
+            'gender' => 'required',
             'password' => 'required|string|min:6|confirmed',
         ]);
     }
@@ -62,10 +64,41 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+        // Get dummy main user based off of gender
+        $dummy_user = json_decode(file_get_contents('https://randomuser.me/api/?nat=gb,us&gender=' . strtolower($data['gender'])))->results[0];
+
+        // Get 4 random other dummy users
+        $dummy_users = json_decode(file_get_contents('https://randomuser.me/api/?nat=gb,us&results=4'))->results;
+
+        // Create a user with dummy photo
+        $user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
+            'gender' => $data['gender'],
+            'photo_path' => $dummy_user->picture->large,
             'password' => bcrypt($data['password']),
         ]);
+
+        // Create a primary person based off the user
+        $person = Person::create([
+            'user_id' => $user->id,
+            'name' => $user->name,
+            'gender' => $user->gender,
+            'photo_path' => $user->photo_path,
+        ]);
+
+        // Create 4 alternate dummy users
+        for ($i=0; $i < 4; $i++) {
+            $dummy_user = $dummy_users[$i];
+            $person = Person::create([
+                'user_id' => $user->id,
+                'name' => ucfirst($dummy_user->name->first),
+                'gender' => $dummy_user->gender,
+                'photo_path' => $dummy_user->picture->large,
+            ]);
+        }
+
+        // Return created user
+        return $user;
     }
 }
