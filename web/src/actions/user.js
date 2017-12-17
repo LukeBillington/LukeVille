@@ -33,5 +33,13 @@ export const userFetchData = url => {
       dispatch(userHasErrored(true));
     });
   }
+}
 
+export const userTogglePerson = url => {
+  return (dispatch) => {
+    axios.get('http://localhost:8000/api/' + url)
+    .then((data) => {
+      dispatch(userFetchData('user'));
+    })
+  }
 }

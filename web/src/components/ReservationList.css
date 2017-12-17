@@ -1,0 +1,11 @@
+.ReservationList_Container {
+  padding: 1rem;
+  padding-top: 1.5rem;
+}
+
+.ReservationList_List {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
