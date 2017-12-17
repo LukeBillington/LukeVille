@@ -1,0 +1,11 @@
+.AttractionList_Container {
+  padding: 1rem;
+  padding-top: 1.5rem;
+}
+
+.AttractionList_List {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}

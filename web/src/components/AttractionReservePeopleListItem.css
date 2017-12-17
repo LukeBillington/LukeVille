@@ -1,0 +1,25 @@
+.AttractionReservePeopleListItem_Container {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  opacity: .5;
+}
+
+.AttractionReservePeopleListItem_SelectedContainer {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+
+.AttractionReservePeopleListItem_Image {
+  width: 10rem;
+  height: 10rem;
+  border-radius: 5rem;
+}
+
+.AttractionReservePeopleListItem_Name {
+  padding-top: 1rem;
+  font-size: 1.4rem;
+  text-align: center;
+  font-family: 'proxima';
+}
